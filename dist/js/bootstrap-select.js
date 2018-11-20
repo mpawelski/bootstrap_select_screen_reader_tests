@@ -785,11 +785,11 @@
               '</span>'
             ) +
           '</button>' +
-          '<div class="' + classNames.MENU + ' ' + (version.major === '4' ? '' : classNames.SHOW) + '" role="combobox">' +
+          '<div class="' + classNames.MENU + ' ' + (version.major === '4' ? '' : classNames.SHOW) + '">' +
             header +
             searchbox +
             actionsbox +
-            '<div class="inner ' + classNames.SHOW + '" role="listbox" aria-expanded="false" tabindex="-1">' +
+            '<div class="inner ' + classNames.SHOW + '" aria-expanded="false" tabindex="-1">' +
                 '<ul class="' + classNames.MENU + ' inner ' + (version.major === '4' ? classNames.SHOW : '') + '">' +
                 '</ul>' +
             '</div>' +
@@ -2828,8 +2828,8 @@
 
   $(document)
       .off('keydown.bs.dropdown.data-api')
-      .on('keydown' + EVENT_KEY, '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bootstrap-select .bs-searchbox input', Selectpicker.prototype.keydown)
-      .on('focusin.modal', '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bootstrap-select .bs-searchbox input', function (e) {
+      .on('keydown' + EVENT_KEY, '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select .inner, .bootstrap-select .bs-searchbox input', Selectpicker.prototype.keydown)
+      .on('focusin.modal', '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select .inner, .bootstrap-select .bs-searchbox input', function (e) {
         e.stopPropagation();
       });
 
